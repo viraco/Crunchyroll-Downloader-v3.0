@@ -87,16 +87,6 @@ Crunchyroll Downloader
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:Crunchyroll_Downloader.My.Resources.Resources.crdsettings_setowncookie_button">
-<summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Crunchyroll_Downloader.My.Resources.Resources.crdsettings_setowncookie_button_hover">
-<summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:Crunchyroll_Downloader.My.Resources.Resources.crdsettings_setUScookie_button">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
@@ -137,9 +127,39 @@ Crunchyroll Downloader
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:Crunchyroll_Downloader.My.Resources.Resources.Help_Background">
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.Funimation_Player_ID">
 <summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+  Sucht eine lokalisierte Zeichenfolge, die src=&quot;/player/ ähnelt.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.Funimation_Split_1">
+<summary>
+  Sucht eine lokalisierte Zeichenfolge, die &lt;a class=&quot;trackVideo ng-binding&quot; href=&quot; ähnelt.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.Funimation_Split_2">
+<summary>
+  Sucht eine lokalisierte Zeichenfolge, die &quot;&gt; ähnelt.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.Funimation_src_string">
+<summary>
+  Sucht eine lokalisierte Zeichenfolge, die &quot;src&quot;: ähnelt.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.Funimation_Subtitle_String">
+<summary>
+  Sucht eine lokalisierte Zeichenfolge, die &quot;, &quot;kind&quot;: &quot;subtitle&quot;, &quot;type&quot;: &quot;CC&quot;, &quot;language&quot;: &quot;en&quot; ähnelt.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.Funimation_Subtitle_String2">
+<summary>
+  Sucht eine lokalisierte Zeichenfolge, die &quot;, &quot;kind&quot;: &quot;subtitle&quot;, &quot;type&quot;: &quot;Full&quot;, &quot;language&quot;: &quot;en&quot; ähnelt.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.Funimation_thumbnail">
+<summary>
+  Sucht eine lokalisierte Zeichenfolge, die &lt;meta property=&quot;og:image&quot; content=&quot; ähnelt.
 </summary>
 </member>
 <member name="P:Crunchyroll_Downloader.My.Resources.Resources.hls_endString">
@@ -236,6 +256,21 @@ Crunchyroll Downloader
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
 </summary>
 </member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.LoginSkip">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.LoginSkipHover">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.LoginSuccess">
+<summary>
+  Sucht eine lokalisierte Zeichenfolge, die &quot;error&quot;:false,&quot;code&quot;:&quot;ok&quot; ähnelt.
+</summary>
+</member>
 <member name="P:Crunchyroll_Downloader.My.Resources.Resources.main_add">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
@@ -247,6 +282,11 @@ Crunchyroll Downloader
 </summary>
 </member>
 <member name="P:Crunchyroll_Downloader.My.Resources.Resources.main_browser">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.main_browser_hover">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
@@ -291,22 +331,32 @@ Crunchyroll Downloader
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.main_pause">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.main_pause_hover">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.main_pause_play">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.main_pause_play_hover">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Crunchyroll_Downloader.My.Resources.Resources.main_settings">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:Crunchyroll_Downloader.My.Resources.Resources.settings_add_softsubs">
-<summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Crunchyroll_Downloader.My.Resources.Resources.settings_add_softsubs_hover">
-<summary>
-  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Crunchyroll_Downloader.My.Resources.Resources.SoftSubs_Baclground">
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.main_settings_hover">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
@@ -337,12 +387,18 @@ Crunchyroll Downloader
 	.imagestyle{width:156px;height:88px;display:block;margin-bottom:4px}	.ulStyle{margin:0 0 0 -10px;display:block;position:relative;margin-top:8px}
 	.ulStyle li{margin-left:12px;float:left;display:block;position:relative}
 	.listyle{width:156px;display:block;background:#fff;padding:16px;margin-bottom:14px;position:relative;background-color:#b5b3b3}
-	.progressbar{height:14px;backgro [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+	.progressbar{height:14p [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
 </summary>
 </member>
 <member name="P:Crunchyroll_Downloader.My.Resources.Resources.thumbnailString">
 <summary>
   Sucht eine lokalisierte Zeichenfolge, die &quot;thumbnail&quot;:{&quot;url&quot;:&quot; ähnelt.
+</summary>
+</member>
+<member name="P:Crunchyroll_Downloader.My.Resources.Resources.US_ToolTip">
+<summary>
+  Sucht eine lokalisierte Zeichenfolge, die US cookies can&apos;t be used as long you are logged in.
+I delete the curremt session with the unlock, if you want to be logged in with the US cookie you need to enter you data on the left. ähnelt.
 </summary>
 </member>
 </members>

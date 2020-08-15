@@ -1,11 +1,12 @@
-﻿Imports Gecko
-Imports Gecko.Cache
+﻿Imports Gecko.Events
 Imports Microsoft.Win32
 Imports System.Net
-
+Imports System.IO
+Imports System.Text
 
 Public Class einstellungen
     Private Sub einstellungen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ToolTip1.SetToolTip(CB_Login, My.Resources.US_ToolTip)
         For i As Integer = 0 To Main.SoftSubs.Count - 1
             If Main.SoftSubs(i) = "deDE" Then
                 CBdeDE.Checked = True
@@ -32,6 +33,12 @@ Public Class einstellungen
         If Main.MergeSubstoMP4 = True Then
             MergeMP4.Checked = True
         End If
+        If Main.LoginDialog = True Then
+            CB_Login.Checked = True
+        End If
+        If Main.SaveLog = True Then
+            CB_Log.Checked = True
+        End If
         Try
             GB_Resolution.Text = Main.GB_Resolution_Text
             GB_SubLanguage.Text = Main.GB_SubLanguage_Text
@@ -54,17 +61,7 @@ Public Class einstellungen
         ElseIf Main.Resu = 42 Then
             AAuto.Checked = True
         End If
-        'ComboBox1.Items.Add("English")
-        'ComboBox1.Items.Add("Deutsch")
-        'ComboBox1.Items.Add("Italiano (Italian)")
-        'ComboBox1.Items.Add("Français (France)")
-        'ComboBox1.Items.Add("العربية (Arabic)")
-        'ComboBox1.Items.Add("Español (LA)")
-        'ComboBox1.Items.Add("Español (España)")
-        'ComboBox1.Items.Add("Português (Brasil)")
-        'ComboBox1.Items.Add("Русский (Russian)")
 
-        ' ComboBox1.SelectedItem = SubFolder_Nothing
         If Check_CB() = False Then
             ComboBox1.Items.Add(Main.CB_SuB_Nothing)
         End If
@@ -90,12 +87,6 @@ Public Class einstellungen
             ComboBox1.SelectedItem = Main.CB_SuB_Nothing
         End If
 
-        'If Main.SoftSubs = False Then
-        '    RawVideo.Checked = False
-        '    HardSub.Checked = True
-        'ElseIf Main.SoftSubs = True Then
-        '    RawVideo.Checked = True
-        'End If
         If Main.SubFolder = 1 Then
             RBAnime.Checked = True
         ElseIf Main.SubFolder = 2 Then
@@ -112,18 +103,8 @@ Public Class einstellungen
             FFMPEG_CommandP1.Text = ffmpegDisplayCurrent(0) + " " + ffmpegDisplayCurrent(1)
             FFMPEG_CommandP2.Text = ffmpegDisplayCurrent(2) + " " + ffmpegDisplayCurrent(3)
             FFMPEG_CommandP3.Text = ffmpegDisplayCurrent(4) + " " + ffmpegDisplayCurrent(5)
-            'FFMPEG_CommandP4.Text = ffmpegDisplayCurrent(6) + " " + ffmpegDisplayCurrent(7)
         End If
 
-        'Dim ffmpegDisplayCurrent As String() = Main.ffmpeg_command.Split(New String() {" "}, System.StringSplitOptions.RemoveEmptyEntries)
-
-        'If Main.ffmpeg_command = " -c:v hevc_nvenc -preset fast -b:v 6M -bsf:a aac_adtstoasc " Then
-        '    FFMPEG_CommandP10.SelectedIndex = 1
-        'ElseIf Main.ffmpeg_command = " -c:v libx265 -preset fast -b:v 6M -bsf:a aac_adtstoasc " Then
-        '    FFMPEG_CommandP10.SelectedIndex = 2
-        'Else
-        '    FFMPEG_CommandP10.SelectedIndex = 0
-        'End If
         Try
             Dim rkg As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\CRDownloader")
             Firefox_True.Checked = CBool(Integer.Parse(rkg.GetValue("NoUse").ToString))
@@ -212,6 +193,20 @@ Public Class einstellungen
             Main.MergeSubstoMP4 = False
             rk.SetValue("MergeMP4", "0", RegistryValueKind.String)
         End If
+        If CB_Login.Checked = True Then
+            Main.LoginDialog = True
+            rk.SetValue("LoginDialog", "1", RegistryValueKind.String)
+        Else
+            Main.LoginDialog = False
+            rk.SetValue("LoginDialog", "0", RegistryValueKind.String)
+        End If
+        If CB_Log.Checked = True Then
+            Main.SaveLog = True
+            rk.SetValue("SaveLog", "1", RegistryValueKind.String)
+        Else
+            Main.SaveLog = False
+            rk.SetValue("SaveLog", "0", RegistryValueKind.String)
+        End If
         If RBAnime.Checked = True Then
             Main.SubFolder = 1
             rk.SetValue("SubFolder", 1, RegistryValueKind.String)
@@ -236,7 +231,7 @@ Public Class einstellungen
 
         If InStr(FFMPEG_CommandP1.Text, "nvenc") Then
             NumericUpDown1.Value = 2
-        ElseIf inStr(FFMPEG_CommandP1.Text, "libx26") Then
+        ElseIf InStr(FFMPEG_CommandP1.Text, "libx26") Then
             NumericUpDown1.Value = 1
         End If
         rk.SetValue("SL_DL", NumericUpDown1.Value, RegistryValueKind.String)
@@ -316,15 +311,7 @@ Public Class einstellungen
         Return C
     End Function
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Main.LoginOnly = "US_UnBlock"
-        Dim wb As New WebClient
-        Dim Session As String = wb.DownloadString("https://api.criater-stiftung.org/cr-cookie-hama3254.php")
-        'MsgBox(Session)
-        GeckoFX.keks = Session
-        GeckoFX.Show()
-        GeckoFX.WebBrowser1.Navigate("https://www.crunchyroll.com/")
-    End Sub
+
 
     Private Function GeräteID() As String
         Dim rnd As New Random
@@ -396,12 +383,12 @@ Public Class einstellungen
 
     End Sub
 
-    Private Sub PictureBox2_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox2.MouseEnter
-        PictureBox2.Image = My.Resources.crdsettings_setUScookie_button_hover
+    Private Sub PictureBox2_MouseEnter(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub PictureBox2_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox2.MouseLeave
-        PictureBox2.Image = My.Resources.crdsettings_setUScookie_button
+    Private Sub PictureBox2_MouseLeave(sender As Object, e As EventArgs)
+
     End Sub
 
 
@@ -566,6 +553,31 @@ Public Class einstellungen
         FFMPEG_CommandP3.Text = Button.Text
         FFMPEG_CommandP2.Enabled = True
         FFMPEG_CommandP3.Enabled = True
+    End Sub
+
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        GeckoFX.Show()
+        Main.LoginOnly = "US_UnBlock"
+
+        GeckoFX.WebBrowser1.Navigate("https://api.criater-stiftung.org/cr-cookie-ui.php")
+    End Sub
+
+    Private Sub PictureBox2_Enter(sender As Object, e As EventArgs) Handles PictureBox2.MouseEnter
+        PictureBox2.Image = My.Resources.crdsettings_setUScookie_button_hover
+    End Sub
+
+    Private Sub PictureBox2_Leave(sender As Object, e As EventArgs) Handles PictureBox2.MouseLeave
+        PictureBox2.Image = My.Resources.crdsettings_setUScookie_button
+
+    End Sub
+
+    Private Sub CB_Login_DoubleClick(sender As Object, e As EventArgs) Handles CB_Login.DoubleClick
+        If GeckoFX.keks = Nothing Then
+        Else
+            Login.ShowDialog()
+        End If
+
     End Sub
 
 

@@ -190,26 +190,6 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property crdsettings_setowncookie_button() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("crdsettings_setowncookie_button", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property crdsettings_setowncookie_button_hover() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("crdsettings_setowncookie_button_hover", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property crdsettings_setUScookie_button() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("crdsettings_setUScookie_button", resourceCulture)
@@ -290,10 +270,73 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Help_Background() As System.Drawing.Bitmap
+        Friend ReadOnly Property Funimation() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Help_Background", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Funimation", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die src=&quot;/player/ ähnelt.
+        '''</summary>
+        Friend ReadOnly Property Funimation_Player_ID() As String
+            Get
+                Return ResourceManager.GetString("Funimation_Player_ID", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die &lt;a class=&quot;trackVideo ng-binding&quot; href=&quot; ähnelt.
+        '''</summary>
+        Friend ReadOnly Property Funimation_Split_1() As String
+            Get
+                Return ResourceManager.GetString("Funimation_Split_1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die &quot;&gt; ähnelt.
+        '''</summary>
+        Friend ReadOnly Property Funimation_Split_2() As String
+            Get
+                Return ResourceManager.GetString("Funimation_Split_2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die &quot;src&quot;: ähnelt.
+        '''</summary>
+        Friend ReadOnly Property Funimation_src_string() As String
+            Get
+                Return ResourceManager.GetString("Funimation_src_string", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die &quot;, &quot;kind&quot;: &quot;subtitle&quot;, &quot;type&quot;: &quot;CC&quot;, &quot;language&quot;: &quot;en&quot; ähnelt.
+        '''</summary>
+        Friend ReadOnly Property Funimation_Subtitle_String() As String
+            Get
+                Return ResourceManager.GetString("Funimation_Subtitle_String", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die &quot;, &quot;kind&quot;: &quot;subtitle&quot;, &quot;type&quot;: &quot;Full&quot;, &quot;language&quot;: &quot;en&quot; ähnelt.
+        '''</summary>
+        Friend ReadOnly Property Funimation_Subtitle_String2() As String
+            Get
+                Return ResourceManager.GetString("Funimation_Subtitle_String2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die &lt;meta property=&quot;og:image&quot; content=&quot; ähnelt.
+        '''</summary>
+        Friend ReadOnly Property Funimation_thumbnail() As String
+            Get
+                Return ResourceManager.GetString("Funimation_thumbnail", resourceCulture)
             End Get
         End Property
         
@@ -439,6 +482,35 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property LoginSkip() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("LoginSkip", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property LoginSkipHover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("LoginSkipHover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die &quot;error&quot;:false,&quot;code&quot;:&quot;ok&quot; ähnelt.
+        '''</summary>
+        Friend ReadOnly Property LoginSuccess() As String
+            Get
+                Return ResourceManager.GetString("LoginSuccess", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property main_add() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("main_add", resourceCulture)
@@ -462,6 +534,16 @@ Namespace My.Resources
         Friend ReadOnly Property main_browser() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("main_browser", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property main_browser_hover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("main_browser_hover", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -549,6 +631,46 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property main_pause() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("main_pause", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property main_pause_hover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("main_pause_hover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property main_pause_play() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("main_pause_play", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property main_pause_play_hover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("main_pause_play_hover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property main_settings() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("main_settings", resourceCulture)
@@ -559,29 +681,9 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property settings_add_softsubs() As System.Drawing.Bitmap
+        Friend ReadOnly Property main_settings_hover() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("settings_add_softsubs", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property settings_add_softsubs_hover() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("settings_add_softsubs_hover", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property SoftSubs_Baclground() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("SoftSubs_Baclground", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("main_settings_hover", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -626,7 +728,7 @@ Namespace My.Resources
         '''	.imagestyle{width:156px;height:88px;display:block;margin-bottom:4px}	.ulStyle{margin:0 0 0 -10px;display:block;position:relative;margin-top:8px}
         '''	.ulStyle li{margin-left:12px;float:left;display:block;position:relative}
         '''	.listyle{width:156px;display:block;background:#fff;padding:16px;margin-bottom:14px;position:relative;background-color:#b5b3b3}
-        '''	.progressbar{height:14px;backgro [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        '''	.progressbar{height:14p [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         '''</summary>
         Friend ReadOnly Property Startuphtml() As String
             Get
@@ -640,6 +742,16 @@ Namespace My.Resources
         Friend ReadOnly Property thumbnailString() As String
             Get
                 Return ResourceManager.GetString("thumbnailString", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die US cookies can&apos;t be used as long you are logged in.
+        '''I delete the curremt session with the unlock, if you want to be logged in with the US cookie you need to enter you data on the left. ähnelt.
+        '''</summary>
+        Friend ReadOnly Property US_ToolTip() As String
+            Get
+                Return ResourceManager.GetString("US_ToolTip", resourceCulture)
             End Get
         End Property
     End Module

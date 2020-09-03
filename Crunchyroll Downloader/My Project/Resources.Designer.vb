@@ -111,24 +111,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die &quot;type&quot;:&quot;midroll&quot; ähnelt.
-        '''</summary>
-        Friend ReadOnly Property ads_midroll() As String
-            Get
-                Return ResourceManager.GetString("ads_midroll", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die {&quot;type&quot;:&quot;preroll&quot;,&quot;offset&quot;:0}, ähnelt.
-        '''</summary>
-        Friend ReadOnly Property ads_preroll() As String
-            Get
-                Return ResourceManager.GetString("ads_preroll", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property backgroud() As System.Drawing.Bitmap
@@ -154,6 +136,15 @@ Namespace My.Resources
         Friend ReadOnly Property CC_String() As String
             Get
                 Return ResourceManager.GetString("CC_String", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die &lt;meta property=&quot;og:url&quot; content=&quot; ähnelt.
+        '''</summary>
+        Friend ReadOnly Property CR_Head_Url_Split() As String
+            Get
+                Return ResourceManager.GetString("CR_Head_Url_Split", resourceCulture)
             End Get
         End Property
         
@@ -268,12 +259,19 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''  Sucht eine lokalisierte Zeichenfolge, die &lt;!DOCTYPE HTML PUBLIC &quot;-//IETF//DTD HTML 2.0//EN&quot;&gt;
+        '''&lt;html&gt;&lt;head&gt;
+        '''&lt;title&gt;404 Not Found&lt;/title&gt;
+        '''&lt;/head&gt;&lt;body&gt;
+        '''&lt;h1&gt;Not Found&lt;/h1&gt;
+        '''&lt;p&gt;The requested URL was not found on this server.&lt;/p&gt;
+        '''&lt;hr&gt;
+        '''&lt;address&gt;Server at Crunchyroll Downloader Port 8080&lt;/address&gt;
+        '''&lt;/body&gt;&lt;/html&gt; ähnelt.
         '''</summary>
-        Friend ReadOnly Property Funimation() As System.Drawing.Bitmap
+        Friend ReadOnly Property Error_404() As String
             Get
-                Dim obj As Object = ResourceManager.GetObject("Funimation", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return ResourceManager.GetString("Error_404", resourceCulture)
             End Get
         End Property
         
@@ -359,8 +357,21 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die &lt;/body&gt;
-        '''&lt;/html&gt; ähnelt.
+        '''  Sucht eine lokalisierte Zeichenfolge, die &lt;script&gt;
+        '''
+        '''setInterval(function loadXMLDoc() {
+        '''  var xhttp = new XMLHttpRequest();
+        '''  xhttp.onreadystatechange = function() {
+        '''    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+        '''      document.getElementById(&quot;bodypage&quot;).innerHTML = this.responseText;
+        '''	  //console.log(this.responseText);
+        '''    }
+        '''  };
+        '''  xhttp.open(&quot;GET&quot;, &quot;/&quot;, true);
+        '''  xhttp.send();
+        '''}, 1000);
+        '''&lt;/script&gt;
+        '''&lt;/body&gt;&lt;/html&gt; ähnelt.
         '''</summary>
         Friend ReadOnly Property htmlEnd() As String
             Get
@@ -407,11 +418,10 @@ Namespace My.Resources
         '''       &lt;title&gt;CRD&lt;/title&gt;
         '''              
         '''  &lt;style&gt;
-        '''	.main-bg {margin:0 0 0 0;background-color:#F2F2F2;}
+        '''	.main-bg {margin:0 0 0 0;background-color:#F2F2F2;font-family:Consolas;font-size:16px;}
         '''	.div-spacer{width:16px;height:110px;display:block;margin-bottom:14px;position:relative}
-        '''	.div-episode{width:804px;height:110px;display:block;margin-bottom:14px;position:relative}
-        '''	.class-balken{width:820px;height:8px;display:block;margin-bottom:4px;margin-top:6px}	
-        '''	.class-cc{width:36px; [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        '''	.div-episode{width:730px;height:110px;display:block;margin-bottom:14px;position:relative}
+        '''	.class-balken{width:735px;height:8px;display:block;margin-bottom:4px;marg [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         '''</summary>
         Friend ReadOnly Property htmlTop() As String
             Get
@@ -429,6 +439,7 @@ Namespace My.Resources
         '''&lt;/div&gt;
         '''&lt;span  dir=&quot;auto&quot; class=&apos;percenttext&apos;&gt;0%&lt;/span&gt;
         '''&lt;div&gt;
+        '''&lt;br&gt;
         '''&lt;span dir=&quot;auto&quot; class=&quot;resotext&quot;&gt; ähnelt.
         '''</summary>
         Friend ReadOnly Property htmlvorAufloesung() As String
@@ -685,6 +696,52 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("main_settings_hover", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die &lt;/p&gt;
+        '''      &lt;/div&gt;
+        '''    &lt;/body&gt;
+        '''&lt;/html&gt; ähnelt.
+        '''</summary>
+        Friend ReadOnly Property Post_error_Bottom() As String
+            Get
+                Return ResourceManager.GetString("Post_error_Bottom", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Zeichenfolge, die &lt;html&gt;
+        '''  &lt;head&gt;
+        '''    
+        '''  &lt;/head&gt;
+        '''    &lt;style&gt;
+        '''      body {
+        '''        text-align: center;
+        '''        padding: 40px 0;
+        '''        background: #EBF0F5;
+        '''      }
+        '''        h1 {
+        '''          color: #ad3f26;
+        '''          font-family: sans-serif;
+        '''          font-weight: 900;
+        '''          font-size: 40px;
+        '''          margin-bottom: 10px;
+        '''        }
+        '''        p {
+        '''          color: #404F5E;
+        '''          font-family: sans-serif;
+        '''          font-size:20px;
+        '''          margin: 0;
+        '''        }
+        '''      i {
+        '''        color: #ad3f26;
+        '''        [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        '''</summary>
+        Friend ReadOnly Property Post_error_Top() As String
+            Get
+                Return ResourceManager.GetString("Post_error_Top", resourceCulture)
             End Get
         End Property
         

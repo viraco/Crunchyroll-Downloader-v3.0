@@ -12,7 +12,7 @@ Public Class CRD_List_Item
 
     Dim Label_website_Text As String = Nothing
     Dim StatusRunning As Boolean = True
-    Dim UsedMap As String = Nothing
+    'Dim UsedMap As String = Nothing
     Dim ffmpeg_command As String = Nothing
     Dim Debug2 As Boolean = False
     Dim MergeSubstoMP4 As Boolean = False
@@ -36,7 +36,7 @@ Public Class CRD_List_Item
 #Region "Set UI"
     Public Sub SetLabelWebsite(ByVal Text As String)
         Label_website.Text = Text
-        Label_website_Text = Text
+
     End Sub
     Public Sub SetLabelAnimeTitel(ByVal Text As String)
         Label_Anime.Text = Text
@@ -65,12 +65,36 @@ Public Class CRD_List_Item
             Return False
         End If
     End Function
+    Public Function GetLabelPercent()
+        Try
+            Return Label_percent.Text
+        Catch ex As Exception
+            Return 0
+        End Try
 
+    End Function
+    Public Function GetPercentValue()
+        Try
+            Return ProgressBar1.Value
+        Catch ex As Exception
+
+            Return 0
+        End Try
+
+    End Function
+    Public Function GetNameAnime()
+        Try
+            Return Label_Anime.Text
+        Catch ex As Exception
+            Return "error"
+        End Try
+
+    End Function
 #End Region
 #Region "Set Variables"
-    Public Sub SetUsedMap(ByVal Value As String)
-        UsedMap = Value
-    End Sub
+    'Public Sub SetUsedMap(ByVal Value As String)
+    '    UsedMap = Value
+    'End Sub
     Public Sub Setffmpeg_command(ByVal Value As String)
         ffmpeg_command = Value
     End Sub
@@ -85,9 +109,12 @@ Public Class CRD_List_Item
     End Sub
 #End Region
     Public Sub KillRunningTask()
-        proc.Kill()
-        proc.WaitForExit(500)
-        Label_percent.Text = "canceled -%"
+        If proc.HasExited Then
+        Else
+            proc.Kill()
+            proc.WaitForExit(500)
+            Label_percent.Text = "canceled -%"
+        End If
     End Sub
 
     Private Sub bt_del_MouseEnter(sender As Object, e As EventArgs) Handles bt_del.MouseEnter
@@ -193,26 +220,28 @@ Public Class CRD_List_Item
 
 #Region "Download + Update UI"
 
-    Public Function DownloadFFMPEG(ByVal DL_URL As String, ByVal DL_Pfad As String, ByVal Filename As String) As String
+    Public Function DownloadFFMPEG(ByVal DLCommand As String, ByVal DL_Pfad As String, ByVal Filename As String) As String
         DownloadPfad = DL_Pfad
-        HistoryDL_URL = DL_URL
+        HistoryDL_URL = DLCommand
         HistoryDL_Pfad = DL_Pfad
         HistoryFilename = Filename
 
         Dim exepath As String = Application.StartupPath + "\ffmpeg.exe"
         Dim startinfo As New System.Diagnostics.ProcessStartInfo
         'Dim cmd As String = "-i " + Chr(34) + URL_DL + Chr(34) + " -c copy -bsf:a aac_adtstoasc " + Pfad_DL 'start ffmpeg with command strFFCMD string
-        Dim cmd As String = "-i " + Chr(34) + DL_URL + Chr(34) + " " + ffmpeg_command + " " + DL_Pfad 'start ffmpeg with command strFFCMD string
-        If MergeSubstoMP4 = True Then
-            If CBool(InStr(DL_URL, "-i " + Chr(34))) = True Then
-                cmd = DL_URL + " " + DL_Pfad
-            End If
-        End If
-        If UsedMap = Nothing Then
-        Else
-            cmd = "-i " + Chr(34) + DL_URL + Chr(34) + " -map 0:a " + "-map " + UsedMap + " " + ffmpeg_command + " " + DL_Pfad
-            UsedMap = Nothing
-        End If
+        Dim cmd As String = DLCommand + " " + DL_Pfad 'start ffmpeg with command strFFCMD string
+
+        'If MergeSubstoMP4 = True Then
+        '    If CBool(InStr(DL_URL, "-i " + Chr(34))) = True Then
+        '        cmd = DL_URL + " " + DL_Pfad
+        '    End If
+        'End If
+
+        'If UsedMap = Nothing Then
+        'Else
+
+        '    UsedMap = Nothing
+        'End If
         If Debug2 = True Then
             MsgBox(cmd)
         End If
@@ -322,8 +351,18 @@ Public Class CRD_List_Item
             Dim DownloadFinished As Double = ZeitFertigInteger * bitrateInt / 8
             Dim percent As Integer = ZeitFertigInteger / ZeitGesamtInteger * 100
             Me.Invoke(New Action(Function()
+                                     If percent > 100 Then
+                                         percent = 100
+                                     End If
                                      ProgressBar1.Value = percent
                                      Label_percent.Text = Math.Round(DownloadFinished, 2, MidpointRounding.AwayFromZero).ToString + "MB/" + Math.Round(FileSize, 2, MidpointRounding.AwayFromZero).ToString + "MB " + percent.ToString + "%"
+                                     Return Nothing
+                                 End Function))
+
+        ElseIf InStr(e.Data, "muxing overhead:") Then
+            Me.Invoke(New Action(Function()
+                                     Dim Done As String() = Label_percent.Text.Split(New String() {"MB"}, System.StringSplitOptions.RemoveEmptyEntries)
+                                     Label_percent.Text = "Finished - " + Done(0) + "MB"
                                      Return Nothing
                                  End Function))
         End If
@@ -352,7 +391,7 @@ Public Class CRD_List_Item
             'MsgBox(BaseURL + SiteList(i) + vbNewLine + Pfad_DL + "\" + SiteList(i))
             Dim iWert As Integer = i
             Using client As New WebClient()
-                client.Headers.Add("User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0")
+                client.Headers.Add("User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/79.0")
                 client.DownloadFile(BaseURL + SiteList(i), Pfad_DL + "\" + SiteList(i))
                 Pause(1)
             End Using
@@ -431,5 +470,7 @@ Public Class CRD_List_Item
 
         End Try
     End Sub
+
+
 End Class
 

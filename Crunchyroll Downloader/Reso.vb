@@ -150,4 +150,7 @@
         pictureBox3.BackColor = Color.Transparent
     End Sub
 
+    Private Sub Reso_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles Me.MouseDoubleClick
+        MsgBox(Main.ResoNotFoundString)
+    End Sub
 End Class

@@ -180,8 +180,8 @@ Public Class Anime_Add
     End Sub
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles pictureBox3.Click
+        Main.ListBoxList.Clear()
         If ListBox1.Items.Count > 0 Then
-            Main.ListBoxList.Clear()
             For i As Integer = 0 To ListBox1.Items.Count - 1
                 Main.ListBoxList.Add(ListBox1.Items.Item(i))
             Next
@@ -286,10 +286,7 @@ Public Class Anime_Add
             List_DL_Cancel = False
             pictureBox4.Image = My.Resources.main_button_download_default
         End If
-        If InStr(My.Computer.Info.OSFullName, "Server") Then
-            MsgBox("Windows Server is not supported!", MsgBoxStyle.Critical)
-            Me.Close()
-        End If
+
         pictureBox4.Enabled = True
     End Sub
 

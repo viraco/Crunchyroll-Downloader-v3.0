@@ -88,11 +88,11 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Geckofx-Core, Version=60.0.46.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
-      <HintPath>..\packages\Geckofx60.32.60.0.46\lib\net45\Geckofx-Core.dll</HintPath>
+    <Reference Include="Geckofx-Core, Version=60.0.47.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
+      <HintPath>..\packages\Geckofx60.32.60.0.47\lib\net45\Geckofx-Core.dll</HintPath>
     </Reference>
-    <Reference Include="Geckofx-Winforms, Version=60.0.46.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
-      <HintPath>..\packages\Geckofx60.32.60.0.46\lib\net45\Geckofx-Winforms.dll</HintPath>
+    <Reference Include="Geckofx-Winforms, Version=60.0.47.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
+      <HintPath>..\packages\Geckofx60.32.60.0.47\lib\net45\Geckofx-Winforms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -138,18 +138,6 @@
       <DependentUpon>Debug_Mode.vb</DependentUpon>
     </Compile>
     <Compile Include="Debug_Mode.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Funimation.Designer.vb">
-      <DependentUpon>Funimation.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Funimation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GeckoFX.Designer.vb">
@@ -215,12 +203,6 @@
     <EmbeddedResource Include="Debug_Mode.resx">
       <DependentUpon>Debug_Mode.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Funimation.resx">
-      <DependentUpon>Funimation.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GeckoFX.resx">
       <DependentUpon>GeckoFX.vb</DependentUpon>
     </EmbeddedResource>
@@ -282,14 +264,13 @@
     <Content Include="Firefox\softokn3.dll" />
     <Content Include="Firefox\xul.dll" />
     <Content Include="icon.ico" />
-    <None Include="Resources\Funimation.png" />
+    <None Include="packages.config" />
     <None Include="Resources\main-browser_hover.png" />
     <None Include="Resources\main-settings_hover.png" />
     <None Include="Resources\main-pause-play-hover.png" />
     <None Include="Resources\main-pause-play.png" />
     <None Include="Resources\main-pause-hover.png" />
     <None Include="Resources\main-pause.png" />
-    <None Include="packages.config" />
     <None Include="Resources\LoginSkipHover.png" />
     <None Include="Resources\LoginSkip.png" />
     <None Include="Resources\softsubs_download_hover.png" />
@@ -336,11 +317,11 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="..\packages\Geckofx60.32.60.0.46\build\Geckofx60.32.targets" Condition="Exists('..\packages\Geckofx60.32.60.0.46\build\Geckofx60.32.targets')" />
+  <Import Project="..\packages\Geckofx60.32.60.0.47\build\Geckofx60.32.targets" Condition="Exists('..\packages\Geckofx60.32.60.0.47\build\Geckofx60.32.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Geckofx60.32.60.0.46\build\Geckofx60.32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Geckofx60.32.60.0.46\build\Geckofx60.32.targets'))" />
+    <Error Condition="!Exists('..\packages\Geckofx60.32.60.0.47\build\Geckofx60.32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Geckofx60.32.60.0.47\build\Geckofx60.32.targets'))" />
   </Target>
 </Project>
